@@ -1,0 +1,424 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3rem;
+    color: #4a5568;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Navigation styles */
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.mode-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #4a5568;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mode-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mode-btn.active {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Mode sections */
+.mode-section {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.mode-section.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Table selector */
+.table-selector {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.table-selector label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-right: 10px;
+}
+
+.table-selector select {
+    padding: 10px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+}
+
+/* Tables container */
+.tables-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.math-table {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.math-table:hover {
+    transform: translateY(-5px);
+}
+
+.table-title {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin: 5px 0;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+}
+
+.table-row:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.02);
+}
+
+.equation {
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.result {
+    font-weight: bold;
+    color: #667eea;
+    font-size: 1.2rem;
+}
+
+/* Quiz styles */
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.quiz-header h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #4a5568;
+    font-size: 2rem;
+}
+
+.score-board {
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.question-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.question {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4a5568;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.option-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.option-btn.correct {
+    background: linear-gradient(135deg, #00b894, #00a085);
+}
+
+.option-btn.incorrect {
+    background: linear-gradient(135deg, #e17055, #d63031);
+}
+
+.control-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feedback {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.feedback.correct {
+    background: #d1f2eb;
+    color: #00b894;
+    border: 2px solid #00b894;
+}
+
+.feedback.incorrect {
+    background: #fadbd8;
+    color: #e17055;
+    border: 2px solid #e17055;
+}
+
+/* Practice mode styles */
+.practice-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.practice-container h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #4a5568;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.practice-settings {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.practice-settings label {
+    font-weight: 600;
+    color: #4a5568;
+    margin-right: 10px;
+}
+
+.practice-settings select {
+    padding: 10px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: white;
+}
+
+.practice-question {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.practice-question input {
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 200px;
+    margin: 20px 10px;
+}
+
+.practice-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.practice-stats div {
+    font-weight: 600;
+    color: #4a5568;
+    text-align: center;
+}
+
+.quiz-results {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.quiz-results h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .tables-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .answer-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .practice-stats {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .question {
+        font-size: 2rem;
+    }
+    
+    .practice-question input {
+        width: 150px;
+    }
+}
