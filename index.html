@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Tables 1-10 | Interactive Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔢 Math Tables 1-10 🔢</h1>
+            <p>Learn multiplication tables in a fun and interactive way!</p>
+        </header>
+
+        <nav class="mode-selector">
+            <button id="viewMode" class="mode-btn active">📊 View Tables</button>
+            <button id="quizMode" class="mode-btn">🎯 Quiz Mode</button>
+            <button id="practiceMode" class="mode-btn">📝 Practice</button>
+        </nav>
+
+        <!-- View Tables Mode -->
+        <section id="tablesView" class="mode-section active">
+            <div class="table-selector">
+                <label for="tableSelect">Choose a table:</label>
+                <select id="tableSelect">
+                    <option value="all">All Tables (1-10)</option>
+                    <option value="1">Table of 1</option>
+                    <option value="2">Table of 2</option>
+                    <option value="3">Table of 3</option>
+                    <option value="4">Table of 4</option>
+                    <option value="5">Table of 5</option>
+                    <option value="6">Table of 6</option>
+                    <option value="7">Table of 7</option>
+                    <option value="8">Table of 8</option>
+                    <option value="9">Table of 9</option>
+                    <option value="10">Table of 10</option>
+                </select>
+            </div>
+            <div id="tablesContainer" class="tables-container"></div>
+        </section>
+
+        <!-- Quiz Mode -->
+        <section id="quizView" class="mode-section">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2>🎯 Quiz Time!</h2>
+                    <div class="score-board">
+                        <span>Score: <span id="score">0</span></span>
+                        <span>Question: <span id="questionNumber">1</span>/10</span>
+                    </div>
+                </div>
+                <div class="question-container">
+                    <div id="question" class="question"></div>
+                    <div class="answer-options">
+                        <button class="option-btn" data-answer="1"></button>
+                        <button class="option-btn" data-answer="2"></button>
+                        <button class="option-btn" data-answer="3"></button>
+                        <button class="option-btn" data-answer="4"></button>
+                    </div>
+                    <div id="feedback" class="feedback"></div>
+                </div>
+                <div class="quiz-controls">
+                    <button id="startQuiz" class="control-btn">Start Quiz</button>
+                    <button id="nextQuestion" class="control-btn" style="display: none;">Next Question</button>
+                </div>
+                <div id="quizResults" class="quiz-results" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- Practice Mode -->
+        <section id="practiceView" class="mode-section">
+            <div class="practice-container">
+                <h2>📝 Practice Mode</h2>
+                <div class="practice-settings">
+                    <label for="practiceTable">Select table to practice:</label>
+                    <select id="practiceTable">
+                        <option value="random">Random (1-10)</option>
+                        <option value="1">Table of 1</option>
+                        <option value="2">Table of 2</option>
+                        <option value="3">Table of 3</option>
+                        <option value="4">Table of 4</option>
+                        <option value="5">Table of 5</option>
+                        <option value="6">Table of 6</option>
+                        <option value="7">Table of 7</option>
+                        <option value="8">Table of 8</option>
+                        <option value="9">Table of 9</option>
+                        <option value="10">Table of 10</option>
+                    </select>
+                </div>
+                <div class="practice-question">
+                    <div id="practiceQ" class="question"></div>
+                    <input type="number" id="practiceAnswer" placeholder="Enter your answer">
+                    <button id="checkAnswer" class="control-btn">Check Answer</button>
+                </div>
+                <div id="practiceFeedback" class="feedback"></div>
+                <div class="practice-stats">
+                    <div>Correct: <span id="correctCount">0</span></div>
+                    <div>Incorrect: <span id="incorrectCount">0</span></div>
+                    <div>Accuracy: <span id="accuracy">0%</span></div>
+                </div>
+                <button id="newPracticeQuestion" class="control-btn">New Question</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>🌟 Keep practicing to become a multiplication master! 🌟</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
